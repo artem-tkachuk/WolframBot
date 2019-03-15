@@ -1,5 +1,5 @@
 const http = require('http');
-const APPID = require('../../keys/WolframBotAPPID.js').APPID;
+const APPID = require('../keys/WolframBotAPPID.js').APPID;
 const parseString = require('xml2js').parseString;
 const telegram = require('./telegram.js');
 

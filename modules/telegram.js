@@ -3,8 +3,8 @@ const request = require('request');
 
 
 
-const token = require('../../keys/WolframBotToken.js').token; //bot's unique identifier //TODO fix token path
-const author_chat_id = require('../../keys/author_chat_id.js').author_chat_id; //author's chat_id
+const token = require('../keys/WolframBotToken.js').token; //bot's unique identifier //TODO fix token path
+const author_chat_id = require('../keys/author_chat_id.js').author_chat_id; //author's chat_id
 
 
 

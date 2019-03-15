@@ -2,7 +2,7 @@
   "name": "wolframbot",
   "version": "1.0.0",
   "description": "Telegram chatbot for working with WolframAlpha",
-  "main": "main.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,6 +22,9 @@
   },
   "homepage": "https://github.com/artem-tkachuk/WolframBot#readme",
   "dependencies": {
-    "request": "^2.88.0"
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "request": "^2.88.0",
+    "xml2js": "^0.4.19"
   }
 }
