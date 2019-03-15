@@ -3,7 +3,7 @@ const APPID = require('../../keys/WolframBotAPPID.js').APPID;
 const parseString = require('xml2js').parseString;
 const telegram = require('./telegram.js');
 
-var calculate = function(original_text) {
+var calculate = function(chat_id, original_text) {
 
     const URL = 'http://api.wolframalpha.com/v2/query';
 
@@ -39,7 +39,7 @@ var calculate = function(original_text) {
 
             parseString(body, function(err, result) {
 
-
+                telegram.send_message(chat_id, result);
 
             });
 
