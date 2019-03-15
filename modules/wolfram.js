@@ -1,37 +1,9 @@
 const http = require('http');
 const APPID = require('../../keys/WolframBotAPPID.js').APPID;
 const parseString = require('xml2js').parseString;
-const async = require("async");
+const telegram = require('./telegram.js');
 
-var calculate = async function(original_text) {
-
-
-    request(original_text, function (body) {
-
-        return body;
-
-    });
-
-
-   /* var img = await request.get(result.img, function(err, res, body) {
-
-
-
-    });*/
-
-};
-
-// ...or ES2017 async functions
-async.mapLimit(urls, 5, async function(url) {
-    const response = await fetch(url)
-    return response.body
-}, (err, results) => {
-    if (err) throw err
-    // results is now an array of the response bodies
-    console.log(results)
-})
-
-async.request(original_text, callback) {
+var calculate = function(original_text) {
 
     const URL = 'http://api.wolframalpha.com/v2/query';
 
@@ -47,12 +19,11 @@ async.request(original_text, callback) {
 
             appid: APPID,
 
-            //reply_markup: reply_keyboard
         }
 
     };
 
-    const result = await http.get(options, function (response) {
+    http.get(options, function (response) {
 
         var body = '';
 
@@ -60,19 +31,15 @@ async.request(original_text, callback) {
 
             body += d;
 
-        };
+        });
 
-        response.on('end', function() {
+        console.log(body);
 
-            const parsed = parseString(body).then() {
+        response.on('end', function(body) {
 
-                return result;
+            parseString(body, function(err, result) {
 
-            });
 
-            callback ({
-
-                body: parsed
 
             });
 
@@ -81,5 +48,9 @@ async.request(original_text, callback) {
     });
 
 }
+
+
+   /* var img = await request.get(result.img, function(err, res, body) { */
+
 
 module.exports.calculate = calculate;
