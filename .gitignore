@@ -1,5 +1,6 @@
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 node_modules/
 
 \.idea/
@@ -8,3 +9,8 @@ node_modules/
 
 node_modules/
 >>>>>>> Telegram
+=======
+\.idea/
+
+node_modules/
+>>>>>>> main
